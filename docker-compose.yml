@@ -1,0 +1,36 @@
+services:
+ web:
+  image: nginx:latest
+  container_name: nginx
+  restart: always
+  ports:
+   - "8080:80"
+  volumes:
+   - ./www:/www
+   - ./site.conf:/etc/nginx/conf.d/site.conf
+  links:
+   - php
+ php:
+  image: php:8.0-fpm
+  build:
+   context: .
+   dockerfile: Dockerfile
+  container_name: php-fpm
+  volumes:
+  - ./www:/www
+  links:
+   - db
+ db:
+  image: mysql:8.0
+  container_name: mysql
+  ports:
+  - "3307:3306"
+  command: --default-authentication-plugin=mysql_native_password
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: teste
+  volumes:
+    - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+

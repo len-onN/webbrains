@@ -1,0 +1,39 @@
+@media (min-width: 768px) {
+    .custom-container {
+        width: 55vw;
+    }
+}
+@media (max-width: 767.99px) {
+    .custom-container {
+        width: 90vw;
+    }
+}
+.container {
+    border: 1px solid #e3e3e3;
+    height: auto;
+    padding: 1em;
+    border-radius: 3em;
+    background-color: #e0e4e7;
+}
+.cabecalho-form {
+    display: flex;
+    flex-direction: row;
+}
+.btn {
+    margin: 0.5em;
+}
+/* .adjust {
+    position: relative;
+    margin-bottom: .8em;
+} */
+#wpp {
+    background-color: white;
+}
+.linkwpp {
+    position: relative;
+    /* left: 50%; */
+}
+.fill-zap {
+    position: relative;
+    border: 1em;
+}

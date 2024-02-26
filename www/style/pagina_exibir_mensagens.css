@@ -1,0 +1,19 @@
+body {
+    background-color: none;
+}
+
+#mensagens {
+    margin: 1em;
+};
+
+.detalhes {
+    display: none;
+}
+
+.expanded .detalhes {
+    display: block;
+}
+
+.btn {
+    margin-left: 10em;
+}
